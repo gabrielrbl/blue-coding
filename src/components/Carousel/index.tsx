@@ -1,15 +1,16 @@
 // * Components
-import { Card, Skeleton } from '..'
+import { Skeleton } from '../Skeleton';
+import { Card } from '../Card';
 
 // * Utils
-import Carousel from 'react-multi-carousel'
+import ReactMultiCarousel from 'react-multi-carousel';
 
 // * Styles
-import 'react-multi-carousel/lib/styles.css'
-import './styles.css'
+import 'react-multi-carousel/lib/styles.css';
+import './styles.css';
 
 // * Models
-import { GIF } from '../../models'
+import { GIF } from '../../models';
 
 const responsive = {
   superLargeDesktop: {
@@ -35,14 +36,14 @@ type ICarouselProps = {
   loading: boolean
 }
 
-export const BasicCarousel = ({ gifs, loading }: ICarouselProps) => {
+export const Carousel = ({ gifs, loading }: ICarouselProps) => {
   if (loading) return <Skeleton />
 
   return (
-    <Carousel responsive={responsive} centerMode>
+    <ReactMultiCarousel responsive={responsive} centerMode>
       {gifs.map((gif) => (
         <Card key={gif.id} gif={gif} />
       ))}
-    </Carousel>
+    </ReactMultiCarousel>
   )
 }

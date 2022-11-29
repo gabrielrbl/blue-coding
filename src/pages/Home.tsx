@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
 // * Components
-import { Input, BasicCarousel, Button } from '../components'
+import { Input } from '../components/Input';
+import { Carousel } from '../components/Carousel';
+import { Button } from '../components/Button';
 
 // * Utils
 import { useQuery } from 'react-query'
@@ -29,7 +31,7 @@ export const Home = () => {
 
       <Button  />
 
-      <BasicCarousel gifs={gifs} loading={searchQuery.isLoading} />
+      <Carousel gifs={gifs} loading={searchQuery.isLoading} />
     </div>
   )
 }
