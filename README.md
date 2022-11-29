@@ -1,3 +1,22 @@
+# GIPHY API
+# React application to search gifs in **Giphy API**
+Technologies used: **React**, **Typescript**, **Material-UI** and **React Query**
+
+#
+
+# **ATTENTION**
+To run the project, create a file in the root of the project with the extension .env and enter the GIPHY api key as `REACT_APP_GIPHY_API_KEY`. Example:
+
+**.env.local**
+
+*REACT_APP_GIPHY_API_KEY*=API_KEY_EXAMPLE
+
+# Screenshots
+
+![Home page](/img/home.png "Home page")
+
+![Gif modal](/img/modal.png "Gif modal")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
