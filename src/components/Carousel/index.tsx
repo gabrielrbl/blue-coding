@@ -32,17 +32,18 @@ const responsive = {
 }
 
 type ICarouselProps = {
-  gifs: GIF[]
-  loading: boolean
+  gifs: GIF[];
+  loading: boolean;
+  setSelectedGif: (gif: GIF | null) => void;
 }
 
-export const Carousel = ({ gifs, loading }: ICarouselProps) => {
+export const Carousel = ({ gifs, loading, setSelectedGif }: ICarouselProps) => {
   if (loading) return <Skeleton />
 
   return (
     <ReactMultiCarousel responsive={responsive} centerMode>
       {gifs.map((gif) => (
-        <Card key={gif.id} gif={gif} />
+        <Card key={gif.id} gif={gif} setSelectedGif={setSelectedGif} />
       ))}
     </ReactMultiCarousel>
   )
