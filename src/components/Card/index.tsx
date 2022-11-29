@@ -1,16 +1,20 @@
 // * MUI
-import { Card as MUICard, CardContent } from '@mui/material'
+import { Card as MUICard, CardContent } from "@mui/material"
 
 // * Models
-import { GIF } from '../../models'
+import { GIF } from "../../models"
+
+// * Styles
+import "./styles.css";
 
 type ICardProps = {
-  gif: GIF
+  gif: GIF;
+  setSelectedGif: (gif: GIF | null) => void;
 }
 
-export const Card = ({ gif }: ICardProps) => {
+export const Card = ({ gif, setSelectedGif }: ICardProps) => {
   return (
-    <MUICard sx={{ height: '100%', display: 'flex', alignItems: 'center'}}>
+    <MUICard className="card" onClick={() => setSelectedGif(gif)}>
       <CardContent>
         <img src={gif.images.original.url} title={gif.title} alt={gif.title} />
       </CardContent>
